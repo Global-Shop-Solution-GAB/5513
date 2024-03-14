@@ -1,0 +1,1688 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.SS_Form1..create
+Gui.SS_Form1..caption("On-Time Shipment Analysis by Customer")
+Gui.SS_Form1..size(6165,7545)
+Gui.SS_Form1..position(0,0)
+Gui.SS_Form1..forecolor(0)
+Gui.SS_Form1..BackColor(-2147483633)
+Gui.SS_Form1..maxbutton(False)
+Gui.SS_Form1..minbutton(False)
+Gui.SS_Form1..mousepointer(0)
+Gui.SS_Form1..sizeable(False)
+Gui.SS_Form1..MinX(0)
+Gui.SS_Form1..MinY(0)
+Gui.SS_Form1..Event(UnLoad,SS_Form1_UnLoad)
+Gui.SS_Form1.lbl_dtp1_BegDate.create(label,"Beginning Ship Date",True,1800,200,1,100,135,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lbl_dtp1_BegDate.LabelStretch(True)
+Gui.SS_Form1.lbl_dtp1_BegDate.setinternationalid(63800)
+Gui.SS_Form1.dtp1_BegDate.create(datepicker)
+Gui.SS_Form1.dtp1_BegDate.size(1800,345)
+Gui.SS_Form1.dtp1_BegDate.position(100,335)
+Gui.SS_Form1.dtp1_BegDate.fontname("Arial")
+Gui.SS_Form1.dtp1_BegDate.tabstop(True)
+Gui.SS_Form1.dtp1_BegDate.tabindex(1)
+Gui.SS_Form1.lbl_dtp1_EndDate.create(label,"Ending Ship Date",True,1800,200,1,1985,135,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lbl_dtp1_EndDate.LabelStretch(True)
+Gui.SS_Form1.lbl_dtp1_EndDate.setinternationalid(216300)
+Gui.SS_Form1.dtp1_EndDate.create(datepicker)
+Gui.SS_Form1.dtp1_EndDate.size(1800,345)
+Gui.SS_Form1.dtp1_EndDate.position(1980,330)
+Gui.SS_Form1.dtp1_EndDate.fontname("Arial")
+Gui.SS_Form1.dtp1_EndDate.tabstop(True)
+Gui.SS_Form1.dtp1_EndDate.tabindex(2)
+Gui.SS_Form1.chk_AllDates.create(checkbox)
+Gui.SS_Form1.chk_AllDates.Caption("All Dates")
+Gui.SS_Form1.chk_AllDates.size(1800,300)
+Gui.SS_Form1.chk_AllDates.position(105,690)
+Gui.SS_Form1.chk_AllDates.setinternationalid(19700)
+Gui.SS_Form1.chk_AllDates.tabstop(True)
+Gui.SS_Form1.chk_AllDates.tabindex(3)
+Gui.SS_Form1.chk_AllDates.Event(Click,chk_AllDates_Click)
+Gui.SS_Form1.chk_AllCustomer.create(checkbox)
+Gui.SS_Form1.chk_AllCustomer.Caption("All Customers")
+Gui.SS_Form1.chk_AllCustomer.size(1800,300)
+Gui.SS_Form1.chk_AllCustomer.position(105,4740)
+Gui.SS_Form1.chk_AllCustomer.setinternationalid(19200)
+Gui.SS_Form1.chk_AllCustomer.tabstop(True)
+Gui.SS_Form1.chk_AllCustomer.tabindex(9)
+Gui.SS_Form1.chk_AllCustomer.Event(Click,chk_AllCustomers_Click)
+Gui.SS_Form1.chk_InclProg.create(checkbox)
+Gui.SS_Form1.chk_InclProg.Caption("Include Progress Bill Lines")
+Gui.SS_Form1.chk_InclProg.size(3600,300)
+Gui.SS_Form1.chk_InclProg.position(105,5370)
+Gui.SS_Form1.chk_InclProg.setinternationalid(291501)
+Gui.SS_Form1.chk_InclProg.tabstop(True)
+Gui.SS_Form1.chk_InclProg.tabindex(12)
+Gui.SS_Form1.chk_ExclAccts.create(checkbox)
+Gui.SS_Form1.chk_ExclAccts.Caption("Utilize Exclusion Accounts to Exclude Records")
+Gui.SS_Form1.chk_ExclAccts.size(3600,300)
+Gui.SS_Form1.chk_ExclAccts.position(105,5685)
+Gui.SS_Form1.chk_ExclAccts.setinternationalid(3305)
+Gui.SS_Form1.chk_ExclAccts.tabstop(True)
+Gui.SS_Form1.chk_ExclAccts.tabindex(13)
+Gui.SS_Form1.lbl_txt1_dBefore.create(label,"Days Before Due Date",True,1800,195,1,105,6075,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lbl_txt1_dBefore.LabelStretch(True)
+Gui.SS_Form1.lbl_txt1_dBefore.setinternationalid(746001)
+Gui.SS_Form1.txt1_dBefore.create(textbox,"",True,1155,300,1,105,6285,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txt1_dBefore.tabstop(True)
+Gui.SS_Form1.txt1_dBefore.tabindex(14)
+Gui.SS_Form1.txt1_dBefore.NumericOnly(2)
+Gui.SS_Form1.lbl_txt1_dAfter.create(label,"Days After Due Date",True,1800,195,1,2505,6060,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lbl_txt1_dAfter.LabelStretch(True)
+Gui.SS_Form1.lbl_txt1_dAfter.setinternationalid(164502)
+Gui.SS_Form1.txt1_dAfter.create(textbox,"",True,1140,300,1,2505,6270,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txt1_dAfter.tabstop(True)
+Gui.SS_Form1.txt1_dAfter.tabindex(15)
+Gui.SS_Form1.txt1_dAfter.NumericOnly(2)
+Gui.SS_Form1.cmd_Print.create(button)
+Gui.SS_Form1.cmd_Print.Caption("Print")
+Gui.SS_Form1.cmd_Print.size(1005,360)
+Gui.SS_Form1.cmd_Print.position(90,6705)
+Gui.SS_Form1.cmd_Print.setinternationalid(452800)
+Gui.SS_Form1.cmd_Print.tabstop(True)
+Gui.SS_Form1.cmd_Print.tabindex(16)
+Gui.SS_Form1.cmd_Print.Event(Click,cmd_Print_Click)
+Gui.SS_Form1.lbl_dDueDate.Create(Label,"Thru",True,495,255,0,1650,6360,True,0,"Arial",8,-2147483633,0)
+Gui.SS_Form1.tabLists.Create(Tab)
+Gui.SS_Form1.tabLists.Size(6060,3720)
+Gui.SS_Form1.tabLists.Position(0,1005)
+Gui.SS_Form1.tabLists.Tabs(2)
+Gui.SS_Form1.tabLists.SetTab(0)
+Gui.SS_Form1.tabLists.Caption("Customers")
+Gui.SS_Form1.tabLists.SetTab(1)
+Gui.SS_Form1.tabLists.Caption("Locations")
+Gui.SS_Form1.lbl_txt_BegCust.create(label,"Beginning Customer",True,1800,195,1,105,75,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lbl_txt_BegCust.LabelStretch(True)
+Gui.SS_Form1.lbl_txt_BegCust.setinternationalid(61000)
+Gui.SS_Form1.lbl_txt_BegCust.Parent("tabLists",0)
+Gui.SS_Form1.lbl_txt_EndCust.create(label,"Ending Customer",True,1800,195,1,2490,75,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lbl_txt_EndCust.LabelStretch(True)
+Gui.SS_Form1.lbl_txt_EndCust.setinternationalid(212900)
+Gui.SS_Form1.lbl_txt_EndCust.Parent("tabLists",0)
+Gui.SS_Form1.txt_BegCust.create(textbox,"",True,1800,300,1,75,285,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txt_BegCust.tabstop(True)
+Gui.SS_Form1.txt_BegCust.tabindex(4)
+Gui.SS_Form1.txt_BegCust.Event(GotFocus,txt_BegCust_GotFocus)
+Gui.SS_Form1.txt_BegCust.Event(LostFocus,txt_BegCust_LostFocus)
+Gui.SS_Form1.txt_BegCust.Parent("tabLists",0)
+Gui.SS_Form1.txt_EndCust.create(textbox,"",True,1800,300,1,2460,285,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txt_EndCust.tabstop(True)
+Gui.SS_Form1.txt_EndCust.tabindex(6)
+Gui.SS_Form1.txt_EndCust.Event(GotFocus,txt_EndCust_GotFocus)
+Gui.SS_Form1.txt_EndCust.Parent("tabLists",0)
+Gui.SS_Form1.cmd_txt_BegCust.create(button)
+Gui.SS_Form1.cmd_txt_BegCust.Caption("^")
+Gui.SS_Form1.cmd_txt_BegCust.size(360,330)
+Gui.SS_Form1.cmd_txt_BegCust.position(1965,270)
+Gui.SS_Form1.cmd_txt_BegCust.tabstop(True)
+Gui.SS_Form1.cmd_txt_BegCust.tabindex(5)
+Gui.SS_Form1.cmd_txt_BegCust.Event(Click,cmd_txt_BegCust_Click)
+Gui.SS_Form1.cmd_txt_BegCust.Parent("tabLists",0)
+Gui.SS_Form1.cmd_txt_EndCust.create(button)
+Gui.SS_Form1.cmd_txt_EndCust.Caption("^")
+Gui.SS_Form1.cmd_txt_EndCust.size(360,330)
+Gui.SS_Form1.cmd_txt_EndCust.position(4350,270)
+Gui.SS_Form1.cmd_txt_EndCust.tabstop(True)
+Gui.SS_Form1.cmd_txt_EndCust.tabindex(7)
+Gui.SS_Form1.cmd_txt_EndCust.Event(Click,cmd_txt_EndCust_Click)
+Gui.SS_Form1.cmd_txt_EndCust.Parent("tabLists",0)
+Gui.SS_Form1.cmd_lvw1_CustAdd.create(button)
+Gui.SS_Form1.cmd_lvw1_CustAdd.Caption("Add")
+Gui.SS_Form1.cmd_lvw1_CustAdd.size(1005,330)
+Gui.SS_Form1.cmd_lvw1_CustAdd.position(4815,270)
+Gui.SS_Form1.cmd_lvw1_CustAdd.setinternationalid(7600)
+Gui.SS_Form1.cmd_lvw1_CustAdd.tabstop(True)
+Gui.SS_Form1.cmd_lvw1_CustAdd.tabindex(8)
+Gui.SS_Form1.cmd_lvw1_CustAdd.Event(Click,cmd_lvw1_CustAdd_Click)
+Gui.SS_Form1.cmd_lvw1_CustAdd.Parent("tabLists",0)
+Gui.SS_Form1.lvw1_Cust.create(listview)
+Gui.SS_Form1.lvw1_Cust.view(3)
+Gui.SS_Form1.lvw1_Cust.size(5895,1995)
+Gui.SS_Form1.lvw1_Cust.position(15,765)
+Gui.SS_Form1.lvw1_Cust.addlistviewcolumn(variable.Translation.61000,2705,0)
+Gui.SS_Form1.lvw1_Cust.addlistviewcolumn(variable.Translation.212900,2705,0)
+Gui.SS_Form1.lvw1_Cust.Parent("tabLists",0)
+Gui.SS_Form1.cmd_lvw1_CustDelete.create(button)
+Gui.SS_Form1.cmd_lvw1_CustDelete.Caption("Delete")
+Gui.SS_Form1.cmd_lvw1_CustDelete.size(1005,330)
+Gui.SS_Form1.cmd_lvw1_CustDelete.position(75,2865)
+Gui.SS_Form1.cmd_lvw1_CustDelete.setinternationalid(171500)
+Gui.SS_Form1.cmd_lvw1_CustDelete.tabstop(True)
+Gui.SS_Form1.cmd_lvw1_CustDelete.tabindex(10)
+Gui.SS_Form1.cmd_lvw1_CustDelete.Event(Click,cmd_lvw1_CustDelete_Click)
+Gui.SS_Form1.cmd_lvw1_CustDelete.Parent("tabLists",0)
+Gui.SS_Form1.cmd_lvw1_CustClear.create(button)
+Gui.SS_Form1.cmd_lvw1_CustClear.Caption("Clear")
+Gui.SS_Form1.cmd_lvw1_CustClear.size(1005,330)
+Gui.SS_Form1.cmd_lvw1_CustClear.position(1200,2865)
+Gui.SS_Form1.cmd_lvw1_CustClear.setinternationalid(106700)
+Gui.SS_Form1.cmd_lvw1_CustClear.tabstop(True)
+Gui.SS_Form1.cmd_lvw1_CustClear.tabindex(11)
+Gui.SS_Form1.cmd_lvw1_CustClear.Event(Click,cmd_lvw1_CustClear_Click)
+Gui.SS_Form1.cmd_lvw1_CustClear.Parent("tabLists",0)
+Gui.SS_Form1.lbl_txt_BegLoc.Create(Label,"Beginning Location",True,1515,195,1,105,75,True,0,"Arial",8,-2147483633,0)
+Gui.SS_Form1.lbl_txt_BegLoc.Parent("tabLists",1)
+Gui.SS_Form1.lbl_txt_EndLoc.Create(Label,"Ending Location",True,1305,195,1,1650,75,True,0,"Arial",8,-2147483633,0)
+Gui.SS_Form1.lbl_txt_EndLoc.Parent("tabLists",1)
+Gui.SS_Form1.txt_BegLoc.Create(TextBox,"",True,840,300,1,75,285,True,0,"Arial",8,16777215,1)
+Gui.SS_Form1.txt_BegLoc.TabStop(True)
+Gui.SS_Form1.txt_BegLoc.TabIndex(4)
+Gui.SS_Form1.txt_BegLoc.Parent("tabLists",1)
+Gui.SS_Form1.txt_BegLoc.Event(GotFocus,txt_BegLoc_GotFocus)
+Gui.SS_Form1.txt_BegLoc.Event(LostFocus,txt_BegLoc_LostFocus)
+Gui.SS_Form1.cmd_txt_BegLoc.Create(Button)
+Gui.SS_Form1.cmd_txt_BegLoc.Size(360,330)
+Gui.SS_Form1.cmd_txt_BegLoc.Position(990,270)
+Gui.SS_Form1.cmd_txt_BegLoc.TabStop(True)
+Gui.SS_Form1.cmd_txt_BegLoc.TabIndex(5)
+Gui.SS_Form1.cmd_txt_BegLoc.Caption("^")
+Gui.SS_Form1.cmd_txt_BegLoc.Parent("tabLists",1)
+Gui.SS_Form1.cmd_txt_BegLoc.Event(Click,cmd_txt_BegLoc_Click)
+Gui.SS_Form1.txt_EndLoc.Create(TextBox,"",True,840,300,1,1620,285,True,0,"Arial",8,16777215,1)
+Gui.SS_Form1.txt_EndLoc.TabStop(True)
+Gui.SS_Form1.txt_EndLoc.TabIndex(6)
+Gui.SS_Form1.txt_EndLoc.Parent("tabLists",1)
+Gui.SS_Form1.txt_EndLoc.Event(GotFocus,txt_EndLoc_GotFocus)
+Gui.SS_Form1.cmd_txt_EndLoc.Create(Button)
+Gui.SS_Form1.cmd_txt_EndLoc.Size(360,330)
+Gui.SS_Form1.cmd_txt_EndLoc.Position(2535,270)
+Gui.SS_Form1.cmd_txt_EndLoc.TabStop(True)
+Gui.SS_Form1.cmd_txt_EndLoc.TabIndex(7)
+Gui.SS_Form1.cmd_txt_EndLoc.Caption("^")
+Gui.SS_Form1.cmd_txt_EndLoc.Parent("tabLists",1)
+Gui.SS_Form1.cmd_txt_EndLoc.Event(Click,cmd_txt_EndLoc_Click)
+Gui.SS_Form1.cmd_lvw2_LocAdd.Create(Button)
+Gui.SS_Form1.cmd_lvw2_LocAdd.Size(1005,330)
+Gui.SS_Form1.cmd_lvw2_LocAdd.Position(3000,270)
+Gui.SS_Form1.cmd_lvw2_LocAdd.Parent("tabLists",1)
+Gui.SS_Form1.cmd_lvw2_LocAdd.TabStop(True)
+Gui.SS_Form1.cmd_lvw2_LocAdd.TabIndex(8)
+Gui.SS_Form1.cmd_lvw2_LocAdd.Caption("Add")
+Gui.SS_Form1.cmd_lvw2_LocAdd.SetInternationalID(7600)
+Gui.SS_Form1.cmd_lvw2_LocAdd.Event(Click,cmd_lvw2_LocAdd_Click)
+Gui.SS_Form1.lvw2_Loc.Create(ListView)
+Gui.SS_Form1.lvw2_Loc.Size(5895,1995)
+Gui.SS_Form1.lvw2_Loc.Position(15,765)
+Gui.SS_Form1.lvw2_Loc.Parent("tabLists",1)
+Gui.SS_Form1.lvw2_Loc.View(3)
+Gui.SS_Form1.lvw2_Loc.addlistviewcolumn("Beginning Location",2705,0)
+Gui.SS_Form1.lvw2_Loc.addlistviewcolumn("Ending Location",2705,0)
+Gui.SS_Form1.cmd_lvw2_LocDelete.Create(Button)
+Gui.SS_Form1.cmd_lvw2_LocDelete.Size(1005,330)
+Gui.SS_Form1.cmd_lvw2_LocDelete.Position(75,2865)
+Gui.SS_Form1.cmd_lvw2_LocDelete.Parent("tabLists",1)
+Gui.SS_Form1.cmd_lvw2_LocDelete.TabStop(True)
+Gui.SS_Form1.cmd_lvw2_LocDelete.TabIndex(10)
+Gui.SS_Form1.cmd_lvw2_LocDelete.Caption("Delete")
+Gui.SS_Form1.cmd_lvw2_LocDelete.SetInternationalID(171500)
+Gui.SS_Form1.cmd_lvw2_LocDelete.Event(Click,cmd_lvw2_LocDelete_Click)
+Gui.SS_Form1.cmd_lvw2_LocClear.Create(Button)
+Gui.SS_Form1.cmd_lvw2_LocClear.Size(1005,330)
+Gui.SS_Form1.cmd_lvw2_LocClear.Position(1200,2865)
+Gui.SS_Form1.cmd_lvw2_LocClear.Parent("tabLists",1)
+Gui.SS_Form1.cmd_lvw2_LocClear.TabStop(True)
+Gui.SS_Form1.cmd_lvw2_LocClear.TabIndex(11)
+Gui.SS_Form1.cmd_lvw2_LocClear.Caption("Clear")
+Gui.SS_Form1.cmd_lvw2_LocClear.SetInternationalID(106700)
+Gui.SS_Form1.cmd_lvw2_LocClear.Event(Click,cmd_lvw2_LocClear_Click)
+Gui.SS_Form1.chk_AllLocations.Create(CheckBox)
+Gui.SS_Form1.chk_AllLocations.Size(1800,300)
+Gui.SS_Form1.chk_AllLocations.Position(105,5055)
+Gui.SS_Form1.chk_AllLocations.TabStop(True)
+Gui.SS_Form1.chk_AllLocations.TabIndex(9)
+Gui.SS_Form1.chk_AllLocations.Caption("All Locations")
+Gui.SS_Form1.chk_AllLocations.Event(Click,chk_AllLocations_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.iKey.Declare(Long,0)
+Variable.Global.iLogID.Declare(Long,0)
+Variable.Global.iBIRunID.Declare(Long,0)
+Variable.Global.bMultiSelection.Declare(Boolean,False)
+Variable.Global.sProps.Declare(String)
+Variable.Global.sProps2.Declare(String)
+Variable.Global.sDateRange.Declare(String)
+Variable.Global.sCustRange.Declare(String)
+Variable.Global.fTotalOrder.Declare(FLoat)
+variable.Global.fTotalShippedQty.Declare(Float)
+V.Global.iKeyLoc.Declare(Long,0)
+V.Global.sLocRange.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iCon.Declare(Long)
+F.ODBC.connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.Global.Object.CreateDB("GlobalDB",V.Caller.CompanyCode,V.Ambient.DBServerName,True,V.Local.iCon)
+GUI.SS_Form1..ApplyTranslation
+GUI.SS_Form1.chk_InclProg.Value("0")
+GUI.SS_Form1.chk_ExclAccts.Value("0")
+Gui.SS_Form1.tabLists.SetTab(0)
+GUI.SS_Form1..Show
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_Form1_UNload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.cmd_Print_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_Print_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iRpt.Declare(Long)
+V.Local.iCon.Declare(Long)
+
+GUI.SS_Form1..Visible(False)
+
+F.Global.BI.GetRunID(V.Global.iBIRunID)
+F.Intrinsic.Control.If(V.Ambient.IsInIDE,=,True)
+	F.Global.BI.StartLogging(V.Global.iBIRunID,1316,0,"",V.Global.iLogID)
+F.Intrinsic.Control.Else
+	F.Global.BI.InitializeReport(,"GCG_5513_SA_OnTimeSh_Cust_Loc.rpt",V.Local.iRpt)
+	F.Global.BI.StartLogging(V.Global.iBIRunID,V.Local.iRpt,-1,"",V.Global.iLogID)
+Function.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_AllCustomer.Value,=,1)
+	'Loads all dates/all customers or date range or all customers. changed after the fact.
+	F.Intrinsic.Control.CallSub(Print_DatesOnly)
+F.Intrinsic.Control.Else
+	'Gets customer range:
+	F.Intrinsic.Control.CallSub(Listview_Loop)
+F.Intrinsic.Control.EndIf
+'combine the 2 into 1 big one.
+Function.Intrinsic.Control.CallSub(LinqJoin)
+
+'20220516/KS - Second IF, commented out below, errs if one of the DataTables does not exist. Need to handle these independently. 
+'Added logic to set flag if one of the DTs exists and has rows.
+v.Local.bGoodToGo.Declare(Boolean)
+F.Intrinsic.Control.If(V.DataTable.dtOnTimeSh.Exists,=,True)
+	F.Intrinsic.Control.If(V.DataTable.dtOnTimeSh.RowCount,>,0)
+		v.Local.bGoodToGo.Set(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtOnTimeShp.Exists,=,True)
+	F.Intrinsic.Control.If(V.DataTable.dtOnTimeShp.RowCount,>,0)
+		v.Local.bGoodToGo.Set(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+f.intrinsic.Control.If(v.Local.bGoodToGo,=,True)
+'F.Intrinsic.Control.If(V.DataTable.dtOnTimeSh.Exists,=,True,"OR",V.DataTable.dtOnTimeShp.Exists,=,True)
+'	F.Intrinsic.Control.If(V.DataTable.dtOnTimeSh.RowCount,>,0,"OR",V.DataTable.dtOnTimeShp.RowCount,>,0)
+		'Add Expression Columns
+		F.Intrinsic.Control.CallSub(Add_Expression_Columns)
+		'Filter DataTable
+		F.Intrinsic.Control.CallSub(Filter_DataTable)		
+		'Load to Z Table
+		F.Intrinsic.Control.CallSub(Load_To_Table)		
+		'get params for the total order and total qty shipped. 
+		Function.Intrinsic.Control.CallSub(TotalsSub)
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+'Setting the date range to display on the crystal report.
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_AllDates.Value,<>,1)
+	F.Intrinsic.String.Build("{0} - {1}",V.Screen.SS_Form1!dtp1_BegDate.Value,V.Screen.SS_Form1!dtp1_EndDate.Value,V.Global.sDateRange)
+F.Intrinsic.Control.EndIf
+'This is calling the Crystal Report
+F.Global.BI.StopLogging(V.Global.iLogID)
+F.Intrinsic.Control.CallSub(CallBI)
+F.Intrinsic.Control.Label("cmd_Print_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmd_Print_Click.End
+
+Program.Sub.Load_To_Table.Start
+'Load to z table.
+V.Local.sFm.Declare(String)
+V.Local.sFm2.Declare(String)
+
+'Add runid column
+F.Data.DataTable.AddColumn("dtOnTimeShC","BIRUNID","Long",V.Global.iBIRunID)
+
+'Map to SQL Table
+V.Local.sFm.Set("BIRUNID@!@RUNID")
+V.Local.sFm.Append("*!*Shipment-SalesOrder-Customer-CustomerNumber@!@CUSTOMER")
+V.Local.sFm.Append("*!*Shipment-SalesOrderShipTo-Shipping-Address-Name@!@NAME_CUST_SHIP")
+V.Local.sFm.Append("*!*Shipment-SalesOrder-Information-CustomerPurchaseOrderNumber@!@CUSTOMER_PO")
+V.Local.sFm.Append("*!*SalesOrderNumber@!@ORDER_NO")
+V.Local.sFm.Append("*!*SalesOrderLineNumber@!@ORDER_LINE")
+V.Local.sFm.Append("*!*Part-Number@!@PART")
+V.Local.sFm.Append("*!*Report-Qty-Ordered@!@QTY_ORDERED")
+V.Local.sFm.Append("*!*Report-Qty-Shipped@!@QTY_SHIPPED")
+V.Local.sFm.Append("*!*Report-DueDate@!@DATE_DUE")
+V.Local.sFm.Append("*!*Report-DateShipped@!@DATE_SHIPPED")
+V.Local.sFm.Append("*!*OnTimeFlag@!@ONTIMEFLAG")
+V.Local.sFm.Append("*!*ShipmentLine-SalesOrderLine-Pricing-MonetaryValue-Customer-Extended@!@EXTENSION_ORDER")
+V.Local.sFm.Append("*!*ShipmentLine-SalesOrderLine-Pricing-MonetaryValue-Customer-Unit@!@PRICE_ORDER")
+V.Local.sFm.Append("*!*ShipmentLine-SalesOrderLine-Part-Information-ProductLine-ProductLineCode@!@PRODUCT_LINE")
+
+'Save to db.
+F.Data.DataTable.SaveToDB("dtOnTimeShC","conx","Z_SA_ONTIME_SCH","",128,V.Local.sFm)
+
+V.Local.sFm.Append("*!*Location@!@LOCATION")
+
+'Save to db.
+F.Data.DataTable.SaveToDB("dtOnTimeShC","conx","GCG_5513_SA_ONTM_SCH","",128,V.Local.sFm)
+F.ODBC.Connection!conx.Close
+Program.Sub.Load_To_Table.End
+
+Program.Sub.Filter_DataTable.Start
+F.Intrinsic.Control.SetErrorHandler("Filter_DataTable_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.strFilter.Declare(String)
+V.Local.strFilter2.Declare(String)
+V.Local.strFilter.Set("")
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_InclProg.Value,=,0)
+	V.Local.strFilter.Append("[Progress-Bill-Flag] = false")
+'	V.Local.strFilter2.Append("[Progress-Bill-Flag] = false")
+F.Intrinsic.Control.Else
+	V.Local.strFilter.Append("([Progress-Bill-Flag] = false OR [Progress-Bill-Flag] = true)")
+'	V.Local.strFilter2.Append("([Progress-Bill-Flag] = false OR [Progress-Bill-Flag] = true)")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_ExclAccts.Value,=,1)
+	V.Local.strFilter.Append(" AND [Excl-Acct-Flag] = false")
+'	V.Local.strFilter2.Append(" AND [Excl-Acct-Flag] = false")
+F.Intrinsic.Control.Else
+	V.Local.strFilter.Append(" AND ([Excl-Acct-Flag] = false OR [Excl-Acct-Flag] = true)")
+'	V.Local.strFilter2.Append(" AND ([Excl-Acct-Flag] = false OR [Excl-Acct-Flag] = true)")
+F.Intrinsic.Control.EndIf
+
+V.Local.strFilter.Append(" AND [Freight-Line-Flag] = false AND [Information-IsCreditMemo] = false AND [Bom-Component-Flag] = false")
+'have to remove any shipment lines that could have come from shipschedule and they had same order date but they weren't shipped in our date range we don't want those.
+v.Local.dStart.Declare(Date) 
+v.Local.dEnd.Declare(Date)
+Function.Intrinsic.Control.If(v.Screen.SS_Form1!chk_AllDates.Value,=,0) 
+	v.Local.dStart.Set(v.Screen.SS_Form1!dtp1_BegDate.Value) 
+	v.Local.dEnd.Set(v.Screen.SS_Form1!dtp1_EndDate.value) 
+	F.Intrinsic.String.Build("{0} And [Report-DateShipped] >= #{1}# And [Report-DateShipped] <= #{2}#",v.Local.strFilter,v.Local.dStart.FormatMM/DD/YYYY,v.Local.dEnd.FormatMM/DD/yyyy,v.Local.strFilter)
+Function.Intrinsic.Control.EndIf
+F.Data.DataView.Create("dtOnTimeSh","dvOnTimeSh",22,V.Local.strFilter,"")
+F.Data.DataView.ToDataTable("dtOnTimeSh","dvOnTimeSh","dtOnTimeShC",True)
+F.Data.DataView.Close("dtOnTimeSh", "dvOnTimeSh")
+F.Data.DataTable.Close("dtOnTimeSh")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Filter_DataTable_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Filter_DataTable.End
+
+Program.Sub.Add_Expression_Columns.Start
+'Qty Shipped, Qty Due.(has to do with Ship Scheds)
+Function.Intrinsic.Control.CallSub(QtyShipped_QtyDue)
+'Exclusion Account Flag
+F.Intrinsic.Control.CallSub(Column_Exclusion_Acct_Flag)
+'Progress Bill Flag
+F.Intrinsic.Control.CallSub(Column_Progress_Bill_Flag)
+'Freight Flag
+F.Intrinsic.Control.CallSub(Column_Freight_Flag)
+'On Time Flag
+F.Intrinsic.Control.CallSub(Column_OnTime_Flag)
+'Determine Part Number
+F.Intrinsic.Control.CallSub(Column_Part_Number)
+'BOM Flag
+F.Intrinsic.Control.CallSub(Column_FlagBOM)
+
+
+Program.Sub.Add_Expression_Columns.End
+
+Program.Sub.Column_FlagBOM.Start
+F.Data.DataTable.AddExpressionColumn("dtOnTimeSh","Bom-Component-Flag","Boolean","IIF([ShipmentLine-SalesOrderLine-Component-Type] = 2,True,False)")
+
+F.Intrinsic.Control.If(V.DataTable.dtOnTimeShp.Exists,=,True)
+	F.Data.DataTable.AddExpressionColumn("dtOnTimeShp","Bom-Component-Flag","Boolean","IIF([ShipmentLine-SalesOrderLine-Component-Type] = 2,True,False)")
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Column_FlagBOM.End
+
+Program.Sub.Column_Part_Number.Start
+'Part Number
+F.Data.DataTable.AddExpressionColumn("dtOnTimeSh","Part-Number","String","[ShipmentLine-SalesOrderLine-Part-PartNumber] + [ShipmentLine-SalesOrderLine-Part-PartNumberRevision]")
+
+F.Intrinsic.Control.If(V.DataTable.dtOnTimeShp.Exists,=,True)
+	F.Data.DataTable.AddExpressionColumn("dtOnTimeShp","Part-Number","String","[ShipmentLine-SalesOrderLine-Part-PartNumber] + [ShipmentLine-SalesOrderLine-Part-PartNumberRevision]")
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Column_Part_Number.End
+
+Program.Sub.Column_Exclusion_Acct_Flag.Start
+'Exculsion Account Flag
+V.Local.i.Declare(Long)
+V.Local.ii.Declare(Long)
+V.Local.iCon.Declare(Long)
+V.Local.iRet.Declare(Long)
+V.Local.sProps.Declare(String)
+V.Local.Array_Excl_Acct.Declare(String)
+V.Local.Exp.Declare(String)
+V.Local.Ord.Declare(String)
+v.Local.sSQL.Declare(String)
+'Add Exclusion acct column to datatable. 
+F.Data.DataTable.AddColumn("dtOnTimeSh","Excl-Acct-Flag","Boolean",False)
+'Use dataview to sort and find top and lowest acct number to use as a range for pulling in object. 
+F.Data.DataView.Create("dtOnTimeSh","dvOnTimeSh")
+'make sure account number is not blank
+F.Data.DataView.SetFilter("dtOnTimeSh","dvOnTimeSh","[ShipmentLine-SalesOrderLine-Accounting-Account-AccountNumber] <> ''")
+F.Intrinsic.Control.If(V.DataView.dtOnTimeSh!dvOnTimeSh.RowCount,>=,0)
+	'Sort acct numbers ascending.
+	'Pull objects
+	'Bring in all 90 exclusion accounts.	
+	'F.Global.Object.LoadDataTable("dtExclAcct","oExclAcct","Accounting.AR.ARExclusionAccounts","GlobalDB",V.Local.iCon,1,TRUE,,1,90,V.Local.iRet)
+	'have to do this by SQl for 17.1
+	v.Local.sSQL.Set("Select Gl_Account From V_AR_EXCL_Account")
+	F.Data.DataTable.CreateFromSQL("dtExclAcct","conX",v.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.Data.DataView.Close("dtOnTimeSh","dvOnTimeSh")
+
+'If table exists, see if any lines show up in the ExlAcct Datatable.. if it does, flag Exclusion-Acct-Flag column as True, otherwise, False.
+F.Intrinsic.Control.If(V.DataTable.dtExclAcct.Exists,=,True)
+	F.Intrinsic.Control.For(V.Local.i,0,V.DataTable.dtExclAcct.RowCount--,1)
+		'Select from IvcCust where Excl_acct = the dtExlAcct Acct Number
+		F.Intrinsic.String.Build("[ShipmentLine-SalesOrderLine-Accounting-Account-AccountNumber] = '{0}'",V.DataTable.dtExclAcct(V.Local.i).GL_Account.FieldValString,V.Local.Exp)
+		F.Data.DataTable.Select("dtOnTimeSh",V.Local.Exp,V.Local.Ord)
+		'if records found then loop through each ordinal returned, setting the Excl-Acct-Flag to True
+		F.Intrinsic.Control.If(V.Local.Ord,<>,"***NORETURN***")
+			F.Intrinsic.String.Split(V.Local.Ord,"*!*",V.Local.Ord)
+			F.Intrinsic.Control.For(V.Local.ii,V.Local.Ord.LBound,V.Local.Ord.UBound,1)
+				F.Data.DataTable.SetValue("dtOnTimeSh",V.Local.Ord(V.Local.ii).Long,"Excl-Acct-Flag",True)
+			F.Intrinsic.Control.Next(V.Local.ii)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtOnTimeShip.Exists,=,True)
+	'Add Exclusion acct column to datatable. 
+	F.Data.DataTable.AddColumn("dtOnTimeShp","Excl-Acct-Flag","Boolean",False)
+	'Use dataview to sort and find top and lowest acct number to use as a range for pulling in object. 
+	F.Data.DataView.Create("dtOnTimeShp","dvOnTimeShp")
+	'make sure account number is not blank
+	F.Data.DataView.SetFilter("dtOnTimeShp","dvOnTimeShp","[ShipmentLine-SalesOrderLine-Accounting-Account-AccountNumber] <> ''")
+	F.Intrinsic.Control.If(V.DataView.dtOnTimeShp!dvOnTimeShp.RowCount,>=,0)
+		'Sort acct numbers ascending.
+		'Pull objects
+		'Bring in all 90 exclusion accounts.
+		F.Global.Object.LoadDataTable("dtExclAcct","oExclAcct","Accounting.AR.ARExclusionAccounts","GlobalDB",V.Local.iCon,1,TRUE,,1,90,V.Local.iRet)
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.Close("dtOnTimeShp","dvOnTimeShp")
+	
+	'If table exists, see if any lines show up in the ExlAcct Datatable.. if it does, flag Exclusion-Acct-Flag column as True, otherwise, False.
+	F.Intrinsic.Control.If(V.DataTable.dtExclAcct.Exists,=,True)
+		F.Intrinsic.Control.For(V.Local.i,0,V.DataTable.dtExclAcct.RowCount--,1)
+			'Select from IvcCust where Excl_acct = the dtExlAcct Acct Number
+			F.Intrinsic.String.Build("[ShipmentLine-SalesOrderLine-Accounting-Account-AccountNumber] = '{0}'",V.DataTable.dtExclAcct(V.Local.i).Information-Account-AccountNumber.FieldValString,V.Local.Exp)
+			F.Data.DataTable.Select("dtOnTimeShp",V.Local.Exp,V.Local.Ord)
+			'if records found then loop through each ordinal returned, setting the Excl-Acct-Flag to True
+			F.Intrinsic.Control.If(V.Local.Ord,<>,"***NORETURN***")
+				F.Intrinsic.String.Split(V.Local.Ord,"*!*",V.Local.Ord)
+				F.Intrinsic.Control.For(V.Local.ii,V.Local.Ord.LBound,V.Local.Ord.UBound,1)
+					F.Data.DataTable.SetValue("dtOnTimeShp",V.Local.Ord(V.Local.ii).Long,"Excl-Acct-Flag",True)
+				F.Intrinsic.Control.Next(V.Local.ii)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Column_Exclusion_Acct_Flag.End
+
+Program.Sub.Column_Progress_Bill_Flag.Start
+'Column_Progress_Bill_Flag
+
+'5 = ProgressBill
+'Progress Bill Flag (0 is False, 1 is True) = If ORDER_HIST_LINE: LINE_TYPE = 'P' (progress bill), set to 1; otherwise, set to 0.
+F.Data.DataTable.AddExpressionColumn("dtOnTimeSh","Progress-Bill-Flag","Boolean","IIF([ShipmentLine-SalesOrderLine-Information-Type] = 5 ,True,False)")
+
+F.Intrinsic.Control.If(V.DataTable.dtOnTimeShp.Exists,=,True)
+	F.Data.DataTable.AddExpressionColumn("dtOnTimeShp","Progress-Bill-Flag","Boolean","IIF([ShipmentLine-SalesOrderLine-Information-Type] = 5 ,True,False)")
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Column_Progress_Bill_Flag.End
+
+Program.Sub.Column_Freight_Flag.Start
+'Freight Flag
+'Freight Flag (0 is False, 1 is True) = If ORDER_HIST_LINE: LINE_TYPE = 'F' (freight), set to 1; otherwise, set to 0.
+F.Data.DataTable.AddExpressionColumn("dtOnTimeSh","Freight-Line-Flag","Boolean","IIF([ShipmentLine-SalesOrderLine-Information-Type] = 4 ,True,False)")
+
+F.Intrinsic.Control.If(V.DataTable.dtOnTimeShp.Exists,=,True)
+	F.Data.DataTable.AddExpressionColumn("dtOnTimeShp","Freight-Line-Flag","Boolean","IIF([ShipmentLine-SalesOrderLine-Information-Type] = 4 ,True,False)")
+F.Intrinsic.Control.EndIf
+
+Program.Sub.Column_Freight_Flag.End
+
+Program.Sub.Column_OnTime_Flag.Start
+F.Intrinsic.Control.SetErrorHandler("ColumnOnTime_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.bDue.Declare(String)
+V.Local.aDue.Declare(String)
+V.Local.bDueDays.Declare(Float)
+V.Local.aDueDays.Declare(Long)
+V.Local.bDueDate.Declare(Date)
+V.Local.aDueDate.Declare(Date)
+v.Local.dActualShipped.Declare(Date)
+v.Local.dActualdDueDate.Declare(Date)
+v.Local.fShippedQty.Declare(Float)
+v.Local.fOrderQty.Declare(Float)
+V.Local.i.Declare(Long)
+V.Local.sError.Declare(String)
+v.Local.bTrueFalse.Declare(Boolean)
+F.Intrinsic.Control.If(V.Screen.SS_Form1!txt1_dBefore.Text,=,"")
+	V.Local.bDue.Set("0")
+F.Intrinsic.Control.Else
+	V.Local.bDue.Set(V.Screen.SS_Form1!txt1_dBefore.Text.Trim)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.SS_Form1!txt1_dAfter.Text,=,"")
+	V.Local.aDue.Set("0")
+F.Intrinsic.Control.Else
+	V.Local.aDue.Set(V.Screen.SS_Form1!txt1_dAfter.Text.Trim)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Math.ConvertToLong(V.Local.bDue,V.Local.bDueDays)
+F.Intrinsic.Math.ConvertToLong(V.Local.aDue,V.Local.aDueDays)
+F.Intrinsic.Control.If(V.Local.bDueDays,<>,0)
+	F.Intrinsic.Math.Mult(V.Local.bDueDays,-1,V.Local.bDueDays)
+F.Intrinsic.Control.EndIf
+
+
+F.Data.DataTable.AddColumn("dtOnTimeSh","Begin-DueDate","Date","01/01/1901")
+F.Data.DataTable.AddColumn("dtOnTimeSh","End-DueDate","Date",v.Ambient.Date)
+F.Data.DataTable.AddColumn("dtOnTimeSh","OnTimeFlag","String","")
+F.Data.DataTable.AddColumn("dtOnTimeSh","Report-DueDate","Date",v.Ambient.Date)
+F.Data.DataTable.AddColumn("dtOnTimeSh","Report-DateShipped","Date",v.Ambient.Date)
+
+F.Intrinsic.Control.For(V.Local.i,0,V.DataTable.dtOnTimeSh.RowCount--,1)
+	'for whatever reason the evaluator here isn't really evaulating as expected. it's giving -1 or 0 so fudge it...OMG
+	Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSh(v.Local.i).ShipmentLine-SalesOrderLine-Delivery-UsesShipSchedule!Fieldval,=,False)		
+		Function.Intrinsic.Control.If(V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValPervasiveDate,=,"1899-12-30","OR",V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValPervasiveDate,=,"9999-12-31",V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValPervasiveDate,=,"")		
+			Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSh(v.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldValPervasiveDate,=,"1899-12-30","OR",v.DataTable.dtOntimeSH(v.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldValPervasiveDate,=,"9999-12-31",v.DataTable.dtOntimeSH(v.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldValPervasiveDate,=,"")
+				F.Intrinsic.Date.DateSerial(1900,01,01,v.Local.bDueDate) 
+				F.Intrinsic.Date.DateSerial(1900,01,01,v.Local.aDueDate)
+				F.Intrinsic.Date.DateSerial(1900,01,01,v.Local.dActualdDueDate)
+			Function.Intrinsic.Control.Else
+				F.Intrinsic.Date.DateAdd("D",V.Local.bDueDays,V.DataTable.dtOnTimeSh(V.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldVal,V.Local.bDueDate)
+				F.Intrinsic.Date.DateAdd("D",V.Local.aDueDays,V.DataTable.dtOnTimeSh(V.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldVal,V.Local.aDueDate)
+				v.Local.dActualdDueDate.Set(v.DataTable.dtOnTimeSh(v.Local.i).SHipment-SalesOrder-Information-OrderDate!FieldVal)			
+			Function.Intrinsic.Control.EndIf
+		Function.Intrinsic.Control.Else
+			F.Intrinsic.Date.DateAdd("D",V.Local.bDueDays,V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldVal,V.Local.bDueDate)
+			F.Intrinsic.Date.DateAdd("D",V.Local.aDueDays,V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldVal,V.Local.aDueDate)
+			v.Local.dActualdDueDate.Set(V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldVal)
+		Function.Intrinsic.Control.EndIf	
+		v.Local.dActualShipped.Set(V.DataTable.dtOnTimeSh(V.Local.i).Shipment-Delivery-ShippedDate!FieldVal)			
+		'OrderQty and Shipped Quantity
+		v.Local.fShippedQty.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipmentLine-Quantity-Shipped!FieldValFloat)	
+		v.Local.fOrderQty.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipmentLine-SalesOrderLine-Quantity-Ordered!FieldvalFloat)			
+	Function.Intrinsic.Control.Else			
+		'check to makre sure onTimsht existed from linq.join if it did we can ready quantity-shipped, if not we can't becuase that's the only place it ever comes from. 
+		Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSht.Exists)				
+			'apparently we also have to check qty because they are having lines that are marked as use ship schedule however they dont have any ship schedule lines. 
+			Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSh(v.Local.i).Quantity-Shipped!FieldValFloat,<=,0)		
+				'pull from regular quantity shipped from order lines. 
+				v.Local.fShippedQty.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipmentLine-Quantity-Shipped!FieldValFloat)			
+			Function.Intrinsic.Control.Else
+				v.Local.fShippedQty.Set(v.DataTable.dtOnTimeSh(v.Local.i).Quantity-Shipped!FieldValFloat)			
+			Function.Intrinsic.Control.EndIf		
+			Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSh(v.Local.i).ShipSchedule-Scheduling-PriorQuantity-Open!FieldValFloat,<=,0)		
+				'pull from regular quantity order from order lines. 
+				v.Local.fOrderQty.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipmentLine-SalesOrderLine-Quantity-Ordered!FieldvalFloat)			
+			Function.Intrinsic.Control.Else
+				v.Local.fOrderQty.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipSchedule-Scheduling-PriorQuantity-Open!FieldvalFloat)			
+			Function.Intrinsic.Control.EndIf				
+		Function.Intrinsic.Control.Else
+			'pull from order liens
+			v.Local.fShippedQty.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipmentLine-Quantity-Shipped!FieldValFloat)			
+			'pull directly from lines.
+			v.Local.fOrderQty.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipmentLine-SalesOrderLine-Quantity-Ordered!FieldvalFloat)			
+		Function.Intrinsic.Control.EndIf
+		Function.Intrinsic.Control.If(V.DataTable.dtOnTimeSh(V.Local.i).ShipScheduleDueDate!FieldValPervasiveDate,=,"1899-12-30","OR",V.DataTable.dtOnTimeSh(V.Local.i).ShipScheduleDueDate!FieldValPervasiveDate,=,"9999-12-31",V.DataTable.dtOnTimeSh(V.Local.i).ShipScheduleDueDate!FieldValPervasiveDate,=,"")
+			Function.Intrinsic.Control.If(V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValPervasiveDate,=,"1899-12-30","OR",V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValPervasiveDate,=,"9999-12-31",V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValPervasiveDate,=,"9999-12-31",V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValPervasiveDate,=,"")				
+				Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSh(v.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldValPervasiveDate,=,"1899-12-30","OR",v.DataTable.dtOntimeSH(v.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldValPervasiveDate,=,"9999-12-31",v.DataTable.dtOntimeSH(v.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldValPervasiveDate,=,"")
+				
+					F.Intrinsic.Date.DateSerial(1900,01,01,v.Local.bDueDate) 
+					F.Intrinsic.Date.DateSerial(1900,01,01,v.Local.aDueDate)
+					F.Intrinsic.Date.DateSerial(1900,01,01,v.Local.dActualdDueDate)
+					v.Local.dActualShipped.Set(v.DataTable.dtOnTimeSh(v.Local.i).Shipment-Delivery-ShippedDate!FieldValpervasiveDate)						
+				Function.Intrinsic.Control.Else
+					'Means due date is either blank or doesn't eval. Pull Shipped date as due date			
+					'if shipschedule due date is not valid we are using the order date as the date due. 
+					F.Intrinsic.Date.DateAdd("D",V.Local.bDueDays,V.DataTable.dtOnTimeSh(V.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldValpervasiveDate,V.Local.bDueDate)
+					F.Intrinsic.Date.DateAdd("D",V.Local.aDueDays,V.DataTable.dtOnTimeSh(V.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldVal,V.Local.aDueDate)
+					v.Local.dActualdDueDate.Set(V.DataTable.dtOnTimeSh(V.Local.i).Shipment-SalesOrder-Information-OrderDate!FieldVal)
+					v.Local.dActualShipped.Set(v.DataTable.dtOnTimeSh(v.Local.i).Shipment-Delivery-ShippedDate!FieldVal)						
+				Function.Intrinsic.Control.EndIf
+			Function.Intrinsic.Control.Else
+				'use Due Date from Lines.
+				F.Intrinsic.Date.DateAdd("D",V.Local.bDueDays,V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValpervasiveDate,V.Local.bDueDate)
+				F.Intrinsic.Date.DateAdd("D",V.Local.aDueDays,V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValpervasiveDate,V.Local.aDueDate)
+				v.Local.dActualdDueDate.Set(V.DataTable.dtOnTimeSh(V.Local.i).ShipmentLine-SalesOrderLine-Delivery-DueDate!FieldValpervasiveDate)
+				v.Local.dActualShipped.Set(V.DataTable.dtOnTimeSh(V.Local.i).Shipment-Delivery-ShippedDate!FieldValpervasiveDate)	
+			Function.Intrinsic.Control.EndIf				
+		Function.Intrinsic.Control.Else
+			'Ship Schedule Due Date is good, so lets pull that. assuming we have a shipped date as well.  
+			F.Intrinsic.Date.DateAdd("D",V.Local.bDueDays,V.DataTable.dtOnTimeSh(V.Local.i).ShipScheduleDueDate!FieldValpervasiveDate,V.Local.bDueDate)				
+			F.Intrinsic.Date.DateAdd("D",V.Local.aDueDays,V.DataTable.dtOnTimeSh(V.Local.i).ShipScheduleDueDate!FieldValpervasiveDate,V.Local.aDueDate)
+			v.Local.dActualdDueDate.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipScheduleDueDate!FieldValpervasiveDate)
+			v.Local.dActualShipped.Set(v.DataTable.dtOnTimeSh(v.Local.i).ShipScheduleShippedDate!FieldValpervasiveDate)						
+		Function.Intrinsic.Control.EndIf	
+	Function.Intrinsic.Control.EndIf	
+	F.Data.DataTable.SetValue("dtOnTimeSh",V.Local.i,"Begin-DueDate",V.Local.bDueDate,"End-DueDate",V.Local.aDueDate,"Report-DueDate",v.Local.dActualdDueDate,"Report-DateShipped",v.Local.dActualShipped,"Report-QTY-Shipped",v.Local.fShippedQty,"Report-Qty-Ordered",v.Local.fOrderQty)	
+	F.Intrinsic.Control.If(v.local.dActualShipped,<,V.DataTable.dtOnTimeSh(V.Local.i).Begin-DueDate.FieldVal)
+		F.Data.DataTable.SetValue("dtOnTimeSh",V.Local.i,"OnTimeFlag","E")
+	F.Intrinsic.Control.ElseIf(v.local.dActualShipped,>=,V.DataTable.dtOnTimeSh(V.Local.i).Begin-DueDate.FieldVal,"AND",v.local.dActualShipped,<=,V.DataTable.dtOnTimeSh(V.Local.i).End-DueDate.FieldVal)
+		F.Data.DataTable.SetValue("dtOnTimeSh",V.Local.i,"OnTimeFlag","O")
+	F.Intrinsic.Control.ElseIf(v.local.dActualShipped,>,V.DataTable.dtOnTimeSh(V.Local.i).End-DueDate.FieldVal)
+		F.Data.DataTable.SetValue("dtOnTimeSh",V.Local.i,"OnTimeFlag","L")
+	F.Intrinsic.Control.EndIf	
+F.Intrinsic.Control.Next(V.Local.i)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("ColumnOnTime_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)		
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Column_OnTime_Flag.End
+
+Program.Sub.QtyShipped_QtyDue.Start
+F.Intrinsic.Control.SetErrorHandler("qtyshipped_qtyDue_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'Qty ordered
+F.Data.DataTable.AddColumn("dtOnTimeSh","Report-Qty-Ordered",Float)
+F.Data.DataTable.AddColumn("dtOnTimeSh","Report-Qty-Shipped",Float)
+'comment out cause shiplines that are marrked as use chip schedule don't actually have ship schedule lines... who knew.... not surprised....
+'F.Data.DataTable.AddExpressionColumn("dtOnTimeSh","Report-Qty-Ordered","Float","IIF([ShipmentLine-SalesOrderLine-Delivery-UsesShipSchedule] = True,[ShipSchedule-Scheduling-PriorQuantity-Open],[ShipmentLine-SalesOrderLine-Quantity-Ordered])")
+'Qty Shipped
+'F.Data.DataTable.AddExpressionColumn("dtOnTimeSh","Report-Qty-Shipped","Float","IIF([ShipmentLine-SalesOrderLine-Delivery-UsesShipSchedule] = True,[Quantity-Shipped],[ShipmentLine-Quantity-Shipped])")
+'F.Data.DataTable.AddExpressionColumn("dtOnTimeSh","Report-DateShipped","Date","IIF([ShipmentLine-SalesOrderLine-Delivery-UsesShipSchedule] = True,[ShipScheduleShippedDate],[Shipment-Delivery-ShippedDate])")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("qtyshipped_qtyDue_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.QtyShipped_QtyDue.End
+
+Program.Sub.Print_DatesOnly.Start
+F.Intrinsic.Control.SetErrorHandler("Print_DateRange_ERR")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.iCon.Declare(Long)
+v.Local.iX.Declare(Long)
+v.Local.iY.Declare(Long)
+v.Local.dStartDate.Declare(Date)
+v.Local.dEndDate.Declare(Date)
+v.Local.dStartRange.Declare(Date) 
+v.Local.dEndRange.Declare(Date) 
+v.Local.sREt.Declare(String)
+'simplify this sub so it can be for either all dates or non all dates. 
+Function.Intrinsic.Control.If(v.Screen.SS_Form1!chk_AllDates.Value,=,1)
+	'all dates.
+	'get the earliest start date possible
+	F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst","Select Top 1 Date_INVOICE from ORDER_HIST_HEAD Where Date_INVOICE >= '1900-01-01' ORder By Date_Invoice")	
+	Function.Intrinsic.Control.If(v.ODBC.conx!rst.EOF,=,False)			
+		v.Local.dStartDate.Set(v.ODBC.conx!rst.FieldValPervasiveDate!Date_Invoice)			
+	Function.Intrinsic.Control.Else
+		'default 
+		F.Intrinsic.Date.DateSerial(1900,01,01,v.Local.dStartDate)
+	Function.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	'Get Ending Date Range
+	'recordset then		
+	F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst","Select Top 1 Date_INVOICE from ORDER_HIST_HEAD ORder By Date_Invoice DESC")
+	Function.Intrinsic.Control.If(v.ODBC.conx!rst.EOF,=,False)		
+		v.Local.dEndDate.Set(v.ODBC.conx!rst.FieldValPervasiveDate!Date_Invoice)			
+	Function.Intrinsic.Control.Else
+		'default 
+		F.Intrinsic.Date.DateSerial(9999,12,31,v.Local.dEndDate)
+	Function.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close	
+Function.Intrinsic.Control.Else		
+	'dates are from datepickers.
+	v.Local.dStartDate.Set(v.Screen.SS_Form1!dtp1_BegDate.value) 
+	v.Local.dEndDate.Set(v.Screen.SS_Form1!dtp1_EndDate.value)	
+Function.Intrinsic.Control.EndIf
+F.Intrinsic.Debug.SetLA("Start Date Min: ",v.Local.dStartDate,"   End Date Max: ",v.Local.dEndDate)
+'Here we are going to load the objects by month to month, becuase of the amount of records that would be returned we might run into memory cap issues.
+v.Local.dStartRange.Set(v.Local.dStartDate) 
+F.Intrinsic.Date.EndOfMonth(v.Local.dStartRange,v.Local.dEndRange) 
+Function.Intrinsic.Control.DoUntil(v.Local.dStartRange,>,v.Local.dEndDate) 
+	Function.Intrinsic.Control.Try
+		Function.Intrinsic.Control.If(v.Local.dEndRange,>,v.Local.dEndDate) 
+			v.Local.dEndRange.Set(v.Local.dEndDate)
+		Function.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Debug.SetLA("Loading Data for date Range : ",v.Local.dstartRange," through ",v.Local.dEndRange,"*******")
+		F.Intrinsic.Control.If(V.DataTable.dtHeader.exists)				
+				F.Global.Object.LoadDataTable("dtTemp","oHeader","Sales.Invoicing.Invoices","GlobalDB",v.Local.iCon,402,True,,-1,v.Local.dStartRange,v.Local.dEndRange,"      ","zzzzzz")
+				Function.Intrinsic.Control.If(v.DataTable.dtTemp.Exists,=,True,"AND",v.DataTable.dtTemp.RowCount--,>=,0)
+					f.Data.DataTable.Merge("dtTemp","dtHeader",True,4)
+				Function.Intrinsic.Control.EndIf
+				F.Data.DataTable.Close("DtTemp")
+		F.Intrinsic.Control.Else			
+			F.Global.Object.LoadDataTable("dtHeader","oHeader","Sales.Invoicing.Invoices","GlobalDB",v.Local.iCon,402,True,,-1,v.Local.dStartRange,v.Local.dEndRange,"      ","zzzzzz")
+			Function.Intrinsic.Control.If(v.DataTable.dtHeader.Exists,=,True, "AND",v.DataTable.dtHeader.RowCount--,<,0)
+				f.Data.DataTable.Close("dtHeader")				
+			Function.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf			
+		
+		'load shipscheduleshipments		
+		F.Intrinsic.Debug.SetLA("Now Loading Ship Schedules for Date Range: ",v.Local.dStartRange," through ", v.Local.dEndRange)
+		F.Intrinsic.Control.If(v.DataTable.dtOnTimeSht.exists) 
+		 	Function.Global.Object.LoadDataTable("dtTemp","oInvoiceSh","Sales.Shipping.ShipScheduleShipments","GlobalDB",V.Local.iCon,10,TRUE,,-1,v.Local.dStartRange,v.Local.dEndRange)		 	
+		 	Function.Intrinsic.Control.If(v.DataTable.dtTemp.Exists,=,True,"AND",v.DataTable.dtTemp.RowCount--,>=,0) 				 	
+				F.Data.DataTable.Merge("DtTemp","dtOnTimeSht",True,4)					
+			Function.Intrinsic.Control.EndIf
+			F.Data.DataTable.Close("dtTemp")
+		Function.Intrinsic.Control.Else			
+			Function.Global.Object.LoadDataTable("dtOnTimeSht","oInvoiceSh","Sales.Shipping.ShipScheduleShipments","GlobalDB",V.Local.iCon,10,TRUE,,-1,v.Local.dStartRange,v.Local.dEndRange)
+			'we have to close the dt if it was created blank and then we try to add blank to non blank... annoying.
+			Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSht.Exists,=,True,"ANd",v.DataTable.dtOnTimeSht.RowCount--,<,0) 
+		 		f.Data.DataTable.Close("dtOnTimeSht")
+			Function.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf			
+		
+		'if they didn't choose the first day of the month this is the second itteration so lets go to the beg of the month
+		F.Intrinsic.Date.BeginningOfMonth(v.Local.dStartRange,v.Local.dStartRange)
+		F.Intrinsic.Date.DateAdd("M",1,v.Local.dStartRange,v.Local.dStartRange)	
+		F.Intrinsic.Date.EndOfMonth(v.Local.dStartRange,v.Local.dEndRange)				
+	Function.Intrinsic.Control.Catch
+		F.Intrinsic.Debug.SetLa("Datatable Load error on Sales.Invoicing.Invoices Mode 402 with dates  START: ",v.Local.dStartRange, "   END: ", v.Local.dEndRange)		
+	Function.Intrinsic.Control.EndTry
+Function.Intrinsic.Control.Loop
+Function.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Print_DateRange_ERR")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	'If no data found in data table, exitsub.
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,=,23300)
+		F.Global.Object.CloseConnection("GlobalDB",V.Local.iCon)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_Form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Print_DatesOnly.End
+
+Program.Sub.Print_CustRange.Start
+F.Intrinsic.Control.SetErrorHandler("Print_CustRange_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.iCon.Declare(Long)
+V.Local.iRet.Declare(Long)
+v.Local.iX.Declare(Long)
+v.Local.iY.Declare(Long)
+v.local.dStartDate.Declare(Date) 
+v.local.dEndDate.Declare(Date)
+v.Local.sRet.Declare(String)
+v.Local.dStartRange.Declare(Date) 
+v.Local.dEndRange.Declare(Date)
+v.Local.sSQL.Declare(String)
+'Determine Dates.
+Function.Intrinsic.Control.If(v.Screen.SS_Form1!chk_AllDates.Value,=,1)
+	 'get the earliest start date possible for the selected customer range.
+	F.Intrinsic.String.Build("Select Top 1 Date_INVOICE from ORDER_HIST_HEAD Where Date_INVOICE >= '1900-01-01' And Customer Between '{0}' And '{1}' ORder By Date_Invoice",v.Args.StartCust,v.args.EndCust,v.Local.sSQl)
+	F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",v.Local.sSQl)
+	Function.Intrinsic.Control.If(v.ODBC.conx!rst.EOF,=,False)			
+		v.Local.dStartDate.Set(v.ODBC.conx!rst.FieldValPervasiveDate!Date_Invoice)
+	Function.Intrinsic.Control.Else	
+		'default 
+		F.Intrinsic.Date.DateSerial(1900,01,01,v.Local.dStartDate)
+	Function.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	'Get Ending Date Range
+	'recordset then		
+	F.Intrinsic.String.Build("Select Top 1 Date_INVOICE from ORDER_HIST_HEAD Where Customer Between '{0}' And '{1}' ORder By Date_Invoice DESC",v.Args.StartCust,v.Args.EndCust,v.Local.sSQl)
+	F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",v.Local.sSQl)
+	Function.Intrinsic.Control.If(v.ODBC.conx!rst.EOF,=,False)		
+		v.Local.dEndDate.Set(v.ODBC.conx!rst.FieldValPervasiveDate!Date_Invoice)			
+	Function.Intrinsic.Control.Else	
+		F.Intrinsic.Date.DateSerial(9999,12,31,v.Local.dEndDate)
+	Function.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+Function.Intrinsic.Control.Else	 
+	v.Local.dStartDate.Set(v.Screen.SS_Form1!dtp1_BegDate.value) 
+	v.Local.dEndDate.Set(v.Screen.SS_Form1!dtp1_EndDate.value)
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Debug.SetLA("Start Date Min: ",v.Local.dStartDate,"   End Date Max: ",v.Local.dEndDate,"  Customer Start: ", v.Args.StartCust,"    Customer End: ",v.Args.EndCust) 
+'Here we are going to load the objects by month to month, becuase of the amount of records that would be returned we might run into memory cap issues.
+v.Local.dStartRange.Set(v.local.dStartDate) 
+F.Intrinsic.Date.EndOfMonth(v.Local.dStartRange,v.Local.dEndRange) 
+Function.Intrinsic.Control.DoUntil(v.local.dStartRange,>,v.Local.dEndDate) 
+	Function.Intrinsic.Control.If(v.local.dEndDate,<,v.Local.dEndRange) 
+		v.Local.dEndRange.Set(v.local.dEndDate)
+	Function.Intrinsic.Control.EndIf	
+	Function.Intrinsic.Control.Try
+		F.Intrinsic.Control.If(v.DataTable.dtheader.Exists,=,True) 
+				F.Global.Object.LoadDataTable("dtTH","oHeader","Sales.Invoicing.Invoices","GlobalDB",v.Local.iCon,402,True,,-1,v.local.dStartRange,v.local.dEndRange,V.Args.StartCust,V.Args.EndCust)
+			Function.Intrinsic.Control.If(v.DataTable.dtTH.Exists,=,True,"AND",v.DataTable.dtTH.RowCount--,>=,0)
+				F.Data.DataTable.Merge("dtTH","dtHeader",True,4)
+			Function.Intrinsic.Control.EndIf
+			f.Data.DataTable.Close("dtTH")
+		Function.Intrinsic.Control.Else						
+			F.Global.Object.LoadDataTable("dtHeader","oHeader","Sales.Invoicing.Invoices","GlobalDB",v.Local.iCon,402,True,,-1,v.local.dStartRange,v.local.dEndRange,V.Args.StartCust,V.Args.EndCust)
+			Function.Intrinsic.Control.If(v.DataTable.dtHeader.Exists,=,True, "AND",v.DataTable.dtHeader.RowCount--,<,0)
+				f.Data.DataTable.Close("dtHeader")
+			Function.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf		
+		
+		'load shipscheduleshipments		
+		F.Intrinsic.Debug.SetLA("Now Loading Ship Schedules for Date Range: ",v.Local.dStartRange," through ", v.Local.dEndRange)
+		function.Intrinsic.Control.If(v.Args.Counter,=,0)
+			F.Intrinsic.Control.If(v.DataTable.dtOnTimeSht.exists) 
+			 	Function.Global.Object.LoadDataTable("dtTemp","oInvoiceSh","Sales.Shipping.ShipScheduleShipments","GlobalDB",V.Local.iCon,10,TRUE,,-1,v.Local.dStartRange,v.Local.dEndRange)		 	
+			 	Function.Intrinsic.Control.If(v.DataTable.dtTemp.Exists,=,True,"AND",v.DataTable.dtTemp.RowCount--,>=,0) 				 	
+					F.Data.DataTable.Merge("DtTemp","dtOnTimeSht",True,4)					
+				Function.Intrinsic.Control.EndIf
+				F.Data.DataTable.Close("dtTemp")
+			Function.Intrinsic.Control.Else			
+				Function.Global.Object.LoadDataTable("dtOnTimeSht","oInvoiceSh","Sales.Shipping.ShipScheduleShipments","GlobalDB",V.Local.iCon,10,TRUE,,-1,v.Local.dStartRange,v.Local.dEndRange)
+				'we have to close the dt if it was created blank and then we try to add blank to non blank... annoying.
+				Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSht.Exists,=,True,"ANd",v.DataTable.dtOnTimeSht.RowCount--,<,0) 
+			 		f.Data.DataTable.Close("dtOnTimeSht")
+				Function.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf			
+		Function.Intrinsic.Control.EndIf
+	Function.Intrinsic.Control.Catch		
+		F.Intrinsic.Debug.SetLa("Datatable Load error on Sales.Invoicing.Invoices Mode 402 with dates  START: ",v.Local.dStartRange, "   END: ", v.Local.dEndRange)			
+	Function.Intrinsic.Control.EndTry
+	'go to beg of month just in case the range ended up in the middle of the month on the first itteration 
+	F.Intrinsic.Date.BeginningOfMonth(v.Local.dStartRange,v.Local.dStartRange)
+	F.Intrinsic.Date.DateAdd("M",1,v.Local.dStartRange,v.Local.dStartRange) 
+	F.Intrinsic.Date.EndOfMonth(v.Local.dStartRange,v.Local.dEndRange)	
+F.Intrinsic.Control.Loop
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Print_CustRange_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	'If no data found in data table, exitsub.
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,=,23300)
+		F.Global.Object.CloseConnection("GlobalDB",V.Local.iCon)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Print_CustRange.End
+
+Program.Sub.Listview_Loop.Start
+F.Intrinsic.Control.SetErrorHandler("Listview_Loop_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sRows.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.iOrd.Declare(Long)
+V.Local.sCustRange.Declare(String)
+V.Local.sRangePad1.Declare(String)
+V.Local.sRangePad2.Declare(String)
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.lvw1_Cust.RetrieveAllListItems(V.Local.sRows)
+F.Intrinsic.Control.If(V.Local.sRows,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sRows.UBound,1)
+		GUI.SS_Form1.lvw1_Cust.RetrieveItemOrdinal(V.Local.sRows(V.Local.iC),V.Local.iOrd)
+		V.Local.sCustRange.Set(V.Screen.SS_Form1!lvw1_Cust.ListItemTextExtended(V.Local.iOrd))
+		F.Intrinsic.String.Split(V.Local.sCustRange,"*!*",V.Local.sCustRange)
+		F.Intrinsic.String.RPad(V.Local.sCustRange(0)," ",6,V.Local.sRangePad1)
+		F.Intrinsic.String.RPad(V.Local.sCustRange(1)," ",6,V.Local.sRangePad2)
+		F.Intrinsic.Control.If(V.Local.iC,>=,1)
+			'Multi selection flag used for Crystal Reports.
+			V.Global.bMultiSelection.Set(True)
+		F.Intrinsic.Control.EndIf		
+		F.Intrinsic.Control.CallSub(Print_CustRange,"StartCust",V.Local.sRangePad1,"EndCust",V.Local.sRangePad2,"Counter",v.Local.ic)				
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+'Setting the customer range. Will use the line below to pass to crystal on CallBI.
+F.Intrinsic.Control.If(V.Local.sRows.UBound,=,0,"AND",V.Local.sRows,<>,"***NORETURN***")
+	F.Intrinsic.String.Build(" {0} - {1}",V.Local.sCustRange(0),V.Local.sCustRange(1),V.Global.sCustRange)
+F.Intrinsic.Control.Elseif(V.Local.sRows.UBound,>,0)
+	V.Global.sCustRange.Set("Multiple Customers")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Listview_Loop_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Listview_Loop.End
+
+Program.Sub.CallBI.Start
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Start ==========================================================
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.local.iRet.Declare(Long)
+V.Local.sParams.set("ALL_CUSTOMERS*!*ALL_DATES*!*CUSTOMER_RANGE*!*DATE_RANGE*!*PROGRESS_BILLING*!*INCLUSION_ACCOUNTS*!*TotalOrders*!*TotalQty*!*DaysBefore*!*DaysAfter*!*ALL_LOCATIONS*!*LOCATION_RANGE")
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}*!*{4}*!*{5}*!*{6}*!*{7}*!*{8}*!*{9}*!*{10}*!*{11}",V.Screen.SS_Form1!chk_AllCustomer.Value,V.Screen.SS_Form1!chk_AllDates.Value,V.Global.sCustRange,V.Global.sDateRange,V.Screen.SS_Form1!chk_InclProg.Value,V.Screen.SS_Form1!chk_ExclAccts.Value,v.Global.fTotalOrder,v.Global.fTotalShippedQty,v.Screen.SS_Form1!txt1_dBefore.text,v.Screen.SS_Form1!txt1_dAfter.text,V.Screen.SS_Form1!chk_AllLocations.Value,V.Global.sLocRange,V.Local.sValues)
+F.Global.BI.runreportpreprocessor(v.Global.iBIRunID,v.Global.iLogID,v.Local.sParams,v.Local.sValues,"",-1,true,"",-1,"",-1,"","",v.Local.iRet)
+'End ==========================================================
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.CallBI.End
+
+Program.Sub.chk_AllDates_Click.Start
+F.Intrinsic.Control.SetErrorHandler("chk_AllDates_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'All Dates
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_AllDates.Value,=,1)
+	'Disable Entry of Date Range
+	GUI.SS_Form1.dtp1_BegDate.Enabled(False)
+	GUI.SS_Form1.dtp1_EndDate.Enabled(False)
+F.Intrinsic.Control.Else
+	'Enable Entry of Date Range
+	GUI.SS_Form1.dtp1_BegDate.Enabled(True)
+	GUI.SS_Form1.dtp1_EndDate.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chk_AllDates_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.chk_AllDates_Click.End
+
+Program.Sub.chk_AllCustomers_Click.Start
+F.Intrinsic.Control.SetErrorHandler("chk_AllCustomers_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_AllCustomer.Value,=,1)
+	'Disable entry of range
+	GUI.SS_Form1.txt_BegCust.Enabled(False)
+	GUI.SS_Form1.txt_EndCust.Enabled(False)
+	GUI.SS_Form1.cmd_txt_BegCust.Enabled(False)
+	GUI.SS_Form1.cmd_txt_EndCust.Enabled(False)
+	GUI.SS_Form1.cmd_lvw1_CustAdd.Enabled(False)
+	GUI.SS_Form1.cmd_lvw1_CustClear.Enabled(False)
+	GUI.SS_Form1.cmd_lvw1_CustDelete.Enabled(False)
+	GUI.SS_Form1.txt_BegCust.Text("")
+	GUI.SS_Form1.txt_EndCust.Text("")
+	GUI.SS_Form1.lvw1_Cust.ClearItems
+F.Intrinsic.Control.Else
+	'Enable entry of range
+	GUI.SS_Form1.txt_BegCust.Enabled(True)
+	GUI.SS_Form1.txt_EndCust.Enabled(True)
+	GUI.SS_Form1.cmd_txt_BegCust.Enabled(True)
+	GUI.SS_Form1.cmd_txt_EndCust.Enabled(True)
+	GUI.SS_Form1.cmd_lvw1_CustAdd.Enabled(True)
+	GUI.SS_Form1.cmd_lvw1_CustClear.Enabled(True)
+	GUI.SS_Form1.cmd_lvw1_CustDelete.Enabled(True)
+	GUI.SS_Form1.lvw1_Cust.ClearItems
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chk_AllCustomers_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.chk_AllCustomers_Click.End
+
+Program.Sub.txt_BegCust_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txt_BegCust_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.txt_BegCust.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt_BegCust_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txt_BegCust_GotFocus.End
+
+Program.Sub.txt_BegCust_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txt_BegCust_LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.txt_EndCust.Text(V.Screen.SS_Form1!txt_BegCust.Text)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt_BegCust_LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txt_BegCust_LostFocus.End
+
+Program.Sub.txt_EndCust_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txt_EndCust_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.txt_EndCust.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt_EndCust_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txt_EndCust_GotFocus.End
+
+Program.Sub.cmd_txt_BegCust_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txt_BegCust_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	GUI.SS_Form1.txt_BegCust.Text(V.Local.sRet.Trim)
+	GUI.SS_Form1.txt_EndCust.Text(V.Screen.SS_Form1!txt_BegCust.Text)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt_BegCust_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_txt_BegCust_Click.End
+
+Program.Sub.cmd_txt_EndCust_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txt_EndCust_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	GUI.SS_Form1.txt_EndCust.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt_EndCust_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_txt_EndCust_Click.End
+
+Program.Sub.cmd_lvw1_CustAdd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw1_CustAdd_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!txt_BegCust.Text,<," ")
+F.Intrinsic.Control.AndIf(V.Screen.SS_Form1!txt_EndCust.Text,<," ")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+GUI.SS_Form1.lvw1_Cust.AddListItem(V.Global.iKey,V.Screen.SS_Form1!txt_BegCust.Text)
+GUI.SS_Form1.lvw1_Cust.SetListItemSubItemText(V.Global.iKey,1,V.Screen.SS_Form1!txt_EndCust.Text)
+GUI.SS_Form1.txt_BegCust.Text("")
+GUI.SS_Form1.txt_EndCust.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw1_CustAdd_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_lvw1_CustAdd_Click.End
+
+Program.Sub.cmd_lvw1_CustDelete_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw1_CustDelete_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iKey.Declare(Long)
+
+V.Local.iKey.Set(V.Screen.SS_Form1!lvw1_Cust.SelectedItemKey)
+GUI.SS_Form1.lvw1_Cust.RemoveItem(V.Local.iKey)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw1_CustDelete_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_lvw1_CustDelete_Click.End
+
+Program.Sub.cmd_lvw1_CustClear_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw1_CustClear_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.lvw1_Cust.ClearItems
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw1_CustClear_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_lvw1_CustClear_Click.End
+
+Program.Sub.SS_Form1_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("SS_Form1_Unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iCon.Declare(Long)
+
+'Closing connection
+F.Global.Object.CloseConnection("GlobalDB",V.Local.iCon)
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("SS_Form1_Unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.SS_Form1_UnLoad.End
+
+Program.Sub.LinqJoin.Start
+F.Intrinsic.Control.SetErrorHandler("Linq_Join_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+v.Local.ix.Declare(Long)
+v.Local.iCon.Declare(Long)
+v.Local.iRet.Declare(Long)
+v.Local.iStartRow.Declare(Long)
+v.Local.iEndRow.Declare(Long)
+v.Local.iTotalRow.Declare(Long)
+v.Local.dDateStart.Declare(Date) 
+v.Local.dDateEnd.Declare(Date) 
+Function.Intrinsic.Control.If(v.Screen.SS_Form1!chk_AllDates.value,=,1)
+	F.Intrinsic.Date.DateSerial(1900,1,1,v.Local.dDateStart) 
+	F.Intrinsic.Date.DateSerial(9999,12,31,v.Local.dDateEnd)
+Function.Intrinsic.Control.Else
+	v.Local.dDateStart.Set(v.Screen.SS_Form1!dtp1_BegDate.value) 
+	v.Local.dDateEnd.Set(v.Screen.SS_Form1!dtp1_EndDate.value)
+Function.Intrinsic.Control.EndIf
+'OK I know this really sucks but we are working with modes that are already existing within 17.1 because it was already releaed and we didn't think about the memory leak issues.
+'so basically we are looping through eader and loading Invoice Lines and Shipscheduleshipments order by order.
+Function.Intrinsic.Control.If(v.DataTable.dtHeader.Exists)
+	F.Intrinsic.Control.For(v.Local.iX,0,v.DataTable.dtHeader.RowCount--,1)		
+		F.Intrinsic.Debug.SetLA("loading Lines for record ",v.Local.ix," of ", v.DataTable.dtHeader.RowCount--)
+		'Load Invoice Lines
+		F.Intrinsic.Control.If(v.DataTable.dtlines.Exists)			
+			F.Global.Object.LoadDataTable("dtTemp","oLines","Sales.Invoicing.InvoiceLines","GlobalDB",v.Local.iCon,543,True,,-1,v.DataTable.dtHeader(v.Local.ix).InvoiceNumber!FieldValTrim,v.DataTable.dtHeader(v.Local.ix).SalesOrderNumber!FieldVal,v.DataTable.dtHeader(v.Local.ix).ShipmentSequence.FieldVal,v.DataTable.dtHeader(v.Local.ix).InvoiceNumber!FieldValTrim,v.DataTable.dtHeader(v.Local.ix).SalesOrderNumber!FieldVal,v.DataTable.dtHeader(v.Local.ix).ShipmentSequence.FieldVal)
+			Function.Intrinsic.Control.If(v.DataTable.dtTemp.Exists,=,True,"AND",v.DataTable.dtTemp.RowCount--,>=,0)
+				F.Data.DataTable.Merge("DtTemp","dtLines",True,4)					
+			Function.Intrinsic.Control.EndIf
+			F.Data.DataTable.Close("dtTemp")
+		Function.Intrinsic.Control.Else			
+			F.Global.Object.LoadDataTable("dtLines","oLines","Sales.Invoicing.InvoiceLines","GlobalDB",v.Local.iCon,543,True,,-1,v.DataTable.dtHeader(v.Local.ix).InvoiceNumber!FieldValTrim,v.DataTable.dtHeader(v.Local.ix).SalesOrderNumber!FieldVal,v.DataTable.dtHeader(v.Local.ix).ShipmentSequence.FieldVal,v.DataTable.dtHeader(v.Local.ix).InvoiceNumber!FieldValTrim,v.DataTable.dtHeader(v.Local.ix).SalesOrderNumber!FieldVal,v.DataTable.dtHeader(v.Local.ix).ShipmentSequence.FieldVal)
+		F.Intrinsic.Control.EndIf					
+	
+	F.Intrinsic.Control.Next(v.Local.iX)
+	
+	F.Intrinsic.Control.CallSub(ListviewLoc_Loop)
+	F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_AllLocations.Value,=,1)
+		V.Global.sLocRange.Set("All Locations")
+	F.Intrinsic.Control.EndIf
+		
+	'Setting the properties (3 objects)
+	V.Global.sProps.Set("IH.Shipment-SalesOrder-Information-OrderDate*!*IH.SalesOrderNumber*!*IH.Shipment-Delivery-ShippedDate*!*IH.Shipment-SalesOrderShipTo-Shipping-Address-Name*!*IH.Shipment-SalesOrder-Information-CustomerPurchaseOrderNumber*!*IH.Shipment-SalesOrder-Customer-CustomerNumber*!*")
+	V.Global.sProps.Append("IL.ShipmentLine-SalesOrderLine-Quantity-Ordered*!*IL.ShipmentLine-Quantity-Shipped*!*IL.ShipmentLine-SalesOrderLine-Component-Type*!*IL.ShipmentLine-SalesOrderLine-Information-Type*!*")
+	V.Global.sProps.Append("IL.ShipmentLine-SalesOrderLine-Delivery-DueDate*!*IL.ShipmentLine-SalesOrderLine-Accounting-Account-AccountNumber*!*IL.ShipmentLine-SalesOrderLine-Delivery-UsesShipSchedule*!*IL.Information-IsCreditMemo*!*")
+	V.Global.sProps.Append("IL.ShipmentLine-SalesOrderLine-Part-PartNumber*!*IL.ShipmentLine-SalesOrderLine-Part-PartNumberRevision*!*IL.ShipmentLine-SalesOrderLine-Part-Information-ProductLine-ProductLineCode*!*")
+	V.Global.sProps.Append("IL.ShipmentLine-SalesOrderLine-Pricing-MonetaryValue-Customer-Unit*!*IL.ShipmentLine-SalesOrderLine-Pricing-MonetaryValue-Customer-Extended*!*IL.SalesOrderLineNumber*!*IL.ShipmentSequence*!*IL.Location")
+		
+	'Join them together, Join changed and we hvae to be a litte finicky
+	Function.Intrinsic.Control.If(v.DataTable.dtOnTimeSht.Exists,=,True,"AND",v.DataTable.dtHeader.Exists,=,True,v.DataTable.dtLines.Exists,=,True)
+		F.Data.Linq.Join("InnerJoin","DataTable","dtHeader*!*IH","DataTable","dtLines*!*IL","IH.InvoiceNumber = IL.InvoiceNumber And IH.SalesOrderNumber = IL.SalesOrderNumber ANd IH.ShipmentSequence = IL.ShipmentSequence",v.Global.sProps,"","","","dtTemp",True)		
+		Function.Intrinsic.Control.If(v.DataTable.dttemp.Exists) 
+			V.Global.sProps.Set("Temp.Shipment-SalesOrder-Information-OrderDate*!*Temp.SalesOrderNumber*!*Temp.Shipment-Delivery-ShippedDate*!*Temp.Shipment-SalesOrderShipTo-Shipping-Address-Name*!*Temp.Shipment-SalesOrder-Information-CustomerPurchaseOrderNumber*!*Temp.Shipment-SalesOrder-Customer-CustomerNumber*!*")
+			V.Global.sProps.Append("Temp.ShipmentLine-SalesOrderLine-Quantity-Ordered*!*Temp.ShipmentLine-Quantity-Shipped*!*Temp.ShipmentLine-SalesOrderLine-Component-Type*!*Temp.ShipmentLine-SalesOrderLine-Information-Type*!*")
+			V.Global.sProps.Append("Temp.ShipmentLine-SalesOrderLine-Delivery-DueDate*!*Temp.ShipmentLine-SalesOrderLine-Accounting-Account-AccountNumber*!*Temp.ShipmentLine-SalesOrderLine-Delivery-UsesShipSchedule*!*Temp.Information-IsCreditMemo*!*")
+			V.Global.sProps.Append("Temp.ShipmentLine-SalesOrderLine-Part-PartNumber*!*Temp.ShipmentLine-SalesOrderLine-Part-PartNumberRevision*!*Temp.ShipmentLine-SalesOrderLine-Part-Information-ProductLine-ProductLineCode*!*")
+			V.Global.sProps.Append("Temp.ShipmentLine-SalesOrderLine-Pricing-MonetaryValue-Customer-Unit*!*Temp.ShipmentLine-SalesOrderLine-Pricing-MonetaryValue-Customer-Extended*!*Temp.SalesOrderLineNumber*!*Temp.ShipmentSequence*!*")
+			V.Global.sProps.Append("S.ShipScheduleDueDate*!*S.ShipScheduleShippedDate*!*S.ShipSchedule-Scheduling-PriorQuantity-Open*!*S.Quantity-Shipped*!*Temp.Location")						
+			F.Data.Linq.Join("LeftJoin","dataTable","dtTemp*!*Temp","dataTable","dtOnTimeSht*!*S","tEMP.SalesOrderNumber = S.SalesOrderNumber AND TEMP.SalesOrderLineNumber = S.SalesOrderLineNumber And TEMP.ShipmentSequence = S.SHipment-ShipmentSequence",v.Global.sProps,"","","","dtOnTimesh",True)
+		Function.Intrinsic.Control.EndIf	
+	Function.Intrinsic.Control.Else
+		'means hopefully that dtOnTimeSht doesn't exist. 
+		Function.Intrinsic.Control.If(v.DataTable.dtHeader.Exists,=,True,"AND",v.DataTable.dtLines.Exists,=,True) 
+			F.Data.Linq.Join("InnerJoin","DataTable","dtHeader*!*IH","DataTable","dtLines*!*IL","IH.InvoiceNumber = IL.InvoiceNumber And IH.SalesOrderNumber = IL.SalesOrderNumber ANd IH.ShipmentSequence = IL.ShipmentSequence",v.Global.sProps,"","","","dtOnTimeSh",True)		
+		Function.Intrinsic.Control.EndIf
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Linq_Join_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.LinqJoin.End
+
+Program.Sub.TotalsSub.Start
+F.Intrinsic.Control.SetErrorHandler("TotalsSub_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+v.Local.sRet.Declare(String)
+v.Local.bRet.Declare(Boolean)
+'Get total number of Unique orders that we have in this dtONTimeSh
+v.global.fTotalOrder.Set(v.DataTable.dtOnTimeShC.RowCount)
+'add up all total shipped quantity
+F.Data.DataTable.Compute("dtOnTimeShC","Sum([Report-Qty-Shipped])","",v.Global.fTotalShippedQty)
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("TotalsSub_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.TotalsSub.End
+
+Program.Sub.chk_AllLocations_Click.Start
+F.Intrinsic.Control.SetErrorHandler("chk_AllLocations_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_AllLocations.Value,=,1)
+	'Disable entry of range
+	GUI.SS_Form1.txt_BegLoc.Enabled(False)
+	GUI.SS_Form1.txt_EndLoc.Enabled(False)
+	GUI.SS_Form1.cmd_txt_BegLoc.Enabled(False)
+	GUI.SS_Form1.cmd_txt_EndLoc.Enabled(False)
+	GUI.SS_Form1.cmd_lvw2_LocAdd.Enabled(False)
+	GUI.SS_Form1.cmd_lvw2_LocClear.Enabled(False)
+	GUI.SS_Form1.cmd_lvw2_LocDelete.Enabled(False)
+	GUI.SS_Form1.txt_BegLoc.Text("")
+	GUI.SS_Form1.txt_EndLoc.Text("")
+	GUI.SS_Form1.lvw2_Loc.ClearItems
+F.Intrinsic.Control.Else
+	'Enable entry of range
+	GUI.SS_Form1.txt_BegLoc.Enabled(True)
+	GUI.SS_Form1.txt_EndLoc.Enabled(True)
+	GUI.SS_Form1.cmd_txt_BegLoc.Enabled(True)
+	GUI.SS_Form1.cmd_txt_EndLoc.Enabled(True)
+	GUI.SS_Form1.cmd_lvw2_LocAdd.Enabled(True)
+	GUI.SS_Form1.cmd_lvw2_LocClear.Enabled(True)
+	GUI.SS_Form1.cmd_lvw2_LocDelete.Enabled(True)
+	GUI.SS_Form1.lvw2_Loc.ClearItems
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chk_AllLocations_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.chk_AllLocations_Click.End
+
+Program.Sub.txt_BegLoc_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txt_BegLoc_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.txt_BegLoc.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt_BegLoc_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txt_BegLoc_GotFocus.End
+
+Program.Sub.txt_BegLoc_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txt_BegLoc_LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.txt_EndLoc.Text(V.Screen.SS_Form1!txt_BegLoc.Text)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt_BegLoc_LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txt_BegLoc_LostFocus.End
+
+Program.Sub.txt_EndLoc_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txt_EndLoc_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.txt_EndLoc.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txt_EndLoc_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txt_EndLoc_GotFocus.End
+
+Program.Sub.cmd_lvw2_LocAdd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw2_LocAdd_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!txt_BegLoc.Text,<," ")
+F.Intrinsic.Control.AndIf(V.Screen.SS_Form1!txt_EndLoc.Text,<," ")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Math.Add(V.Global.iKeyLoc,1,V.Global.iKeyLoc)
+GUI.SS_Form1.lvw2_Loc.AddListItem(V.Global.iKeyLoc,V.Screen.SS_Form1!txt_BegLoc.Text)
+GUI.SS_Form1.lvw2_Loc.SetListItemSubItemText(V.Global.iKeyLoc,1,V.Screen.SS_Form1!txt_EndLoc.Text)
+GUI.SS_Form1.txt_BegLoc.Text("")
+GUI.SS_Form1.txt_EndLoc.Text("")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw2_LocAdd_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_lvw2_LocAdd_Click.End
+
+Program.Sub.cmd_txt_EndLoc_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txt_EndLoc_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Locations","conx","select LOCATION, LOCATION_DESC from V_LOCATIONS where FLAG_CLOSED <> 'Y';","Location*!*Description","20*!*120",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	GUI.SS_Form1.txt_EndLoc.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt_EndLoc_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_txt_EndLoc_Click.End
+
+Program.Sub.cmd_txt_BegLoc_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txt_BegLoc_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Locations","conx","select LOCATION, LOCATION_DESC from V_LOCATIONS where FLAG_CLOSED <> 'Y';","Location*!*Description","20*!*120",V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	GUI.SS_Form1.txt_BegLoc.Text(V.Local.sRet.Trim)
+	GUI.SS_Form1.txt_EndLoc.Text(V.Screen.SS_Form1!txt_BegLoc.Text)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txt_BegLoc_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_txt_BegLoc_Click.End
+
+Program.Sub.cmd_lvw2_LocClear_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw2_LocClear_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+GUI.SS_Form1.lvw2_Loc.ClearItems
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw2_LocClear_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmd_lvw2_LocClear_Click.End
+
+Program.Sub.cmd_lvw2_LocDelete_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvw2_LocDelete_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iKey.Declare(Long)
+
+V.Local.iKey.Set(V.Screen.SS_Form1!lvw2_Loc.SelectedItemKey)
+GUI.SS_Form1.lvw2_Loc.RemoveItem(V.Local.iKey)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvw2_LocDelete_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmd_lvw2_LocDelete_Click.End
+
+Program.Sub.ListviewLoc_Loop.Start
+F.Intrinsic.Control.SetErrorHandler("ListviewLoc_Loop_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sRows.Declare(String)
+V.Local.iC.Declare(Long)
+V.Local.iOrd.Declare(Long)
+V.Local.sLocRange.Declare(String)
+V.Local.sRangePad1.Declare(String)
+V.Local.sRangePad2.Declare(String)
+V.Local.sError.Declare(String)
+
+F.Data.DataTable.AddColumn("dtLines","Location","String")
+F.Data.DataTable.Clone("dtLines","dtLinesLoc",True)
+F.Data.DataTable.CreateFromSQL("dtLoc","conx","select RTRIM(INVOICE) AS INVOICE, ORDER_NO, ORDER_SUFFIX, left(ORDER_LINE,3) as ORDER_LINE, rtrim(LOCATION) as LOCATION from V_ORDER_HIST_LINE;",True)
+
+'F.Data.DataTable.AddExpressionColumn("dtLines","INVOICENUMBER_NUM","Long","Convert(INVOICENUMBER,System.Int64)")
+F.Data.DataTable.AddExpressionColumn("dtLines","SALESORDERNUMBER_NUM","Long","Convert(SALESORDERNUMBER,System.Int64)")
+F.Data.DataTable.AddExpressionColumn("dtLines","SALESORDERLINENUMBER_NUM","Long","Convert(SALESORDERLINENUMBER,System.Int64)")
+F.Data.DataTable.AddExpressionColumn("dtLines","SHIPMENTSEQUENCE_NUM","Long","Convert(SHIPMENTSEQUENCE,System.Int64)")
+'F.Data.DataTable.AddExpressionColumn("dtLoc","INVOICE_NUM","Long","Convert(INVOICE,System.Int64)")
+F.Data.DataTable.AddExpressionColumn("dtLoc","ORDER_NO_NUM","Long","Convert(ORDER_NO,System.Int64)")
+F.Data.DataTable.AddExpressionColumn("dtLoc","ORDER_LINE_NUM","Long","Convert(ORDER_LINE,System.Int64)")
+F.Data.DataTable.AddExpressionColumn("dtLoc","ORDER_SUFFIX_NUM","Long","Convert(ORDER_SUFFIX,System.Int64)")
+GUI.SS_Form1.lvw2_Loc.RetrieveAllListItems(V.Local.sRows)
+F.Intrinsic.Control.If(V.Local.sRows,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sRows.UBound,1)
+		GUI.SS_Form1.lvw2_Loc.RetrieveItemOrdinal(V.Local.sRows(V.Local.iC),V.Local.iOrd)
+		V.Local.sLocRange.Set(V.Screen.SS_Form1!lvw2_Loc.ListItemTextExtended(V.Local.iOrd))
+		F.Intrinsic.String.Split(V.Local.sLocRange,"*!*",V.Local.sLocRange)
+		F.Intrinsic.String.RPad(V.Local.sLocRange(0)," ",6,V.Local.sRangePad1)
+		F.Intrinsic.String.RPad(V.Local.sLocRange(1)," ",6,V.Local.sRangePad2)
+		F.Intrinsic.Control.If(V.Local.iC,>=,1)
+			'Multi selection flag used for Crystal Reports.
+			V.Global.bMultiSelection.Set(True)
+		F.Intrinsic.Control.EndIf		
+		F.Intrinsic.Control.CallSub(Print_LocRange,"StartLoc",V.Local.sRangePad1.Trim,"EndLoc",V.Local.sRangePad2.Trim,"Counter",v.Local.ic)				
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+'Setting the location range. Will use the line below to pass to crystal on CallBI.
+F.Intrinsic.Control.If(V.Local.sRows.UBound,=,0,"AND",V.Local.sRows,<>,"***NORETURN***")
+	F.Intrinsic.String.Build(" {0} - {1}",V.Local.sLocRange(0),V.Local.sLocRange(1),V.Global.sLocRange)
+F.Intrinsic.Control.Elseif(V.Local.sRows.UBound,>,0)
+	V.Global.sLocRange.Set("Multiple Locations")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chk_AllLocations.Value,=,1)
+	F.Data.Linq.Join("LeftJoin","DataTable","dtLines*!*LINEOBJ","DataTable","dtLoc*!*LINESQL","LINEOBJ.InvoiceNumber = LINESQL.INVOICE and LINEOBJ.SalesOrderLineNumber = LINESQL.ORDER_LINE and LINEOBJ.SalesOrderNumber = LINESQL.ORDER_NO and LINEOBJ.ShipmentSequence = LINESQL.ORDER_SUFFIX","LINEOBJ.INFORMATION-INVOICEDATE*!*LINEOBJ.OBSOLETE-COMPLEMENTINVOICEDATE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-QUANTITY-ORDERED*!*LINEOBJ.SHIPMENTLINE-QUANTITY-SHIPPED*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-COMPONENT-TYPE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-INFORMATION-TYPE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-DELIVERY-DUEDATE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-ACCOUNTING-ACCOUNT-ACCOUNTNUMBER*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-DELIVERY-USESSHIPSCHEDULE*!*LINEOBJ.INFORMATION-ISCREDITMEMO*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PART-PARTNUMBER*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PART-PARTNUMBERREVISION*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PART-INFORMATION-PRODUCTLINE-PRODUCTLINECODE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PRICING-MONETARYVALUE-CUSTOMER-UNIT*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PRICING-MONETARYVALUE-CUSTOMER-EXTENDED*!*LINEOBJ.INVOICENUMBER*!*LINEOBJ.SALESORDERLINENUMBER*!*LINEOBJ.SALESORDERNUMBER*!*LINEOBJ.SHIPMENTSEQUENCE*!*LINESQL.LOCATION as Location",,,"LINESQL.LOCATION desc","dtTempLoc",True)
+	F.Data.DataTable.Merge("dtTempLoc","dtLinesLoc",True,2)
+	F.Data.DataTable.Close("dtTempLoc")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtLoc")
+F.Data.DataTable.DeleteRow("dtLines")
+F.Data.DataTable.Merge("dtLinesLoc","dtLines",True,2)
+F.Data.DataTable.Close("dtLinesLoc")
+'F.Data.DataTable.RemoveColumn("dtLines","INVOICENUMBER_NUM")
+F.Data.DataTable.RemoveColumn("dtLines","SALESORDERNUMBER_NUM")
+F.Data.DataTable.RemoveColumn("dtLines","SALESORDERLINENUMBER_NUM")
+F.Data.DataTable.RemoveColumn("dtLines","SHIPMENTSEQUENCE_NUM")
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("ListviewLoc_Loop_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.ListviewLoc_Loop.End
+
+Program.Sub.Print_LocRange.Start
+F.Intrinsic.Control.SetErrorHandler("Print_LocRange_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare
+V.Local.sFilter.Declare
+
+F.Intrinsic.String.Build("LINESQL.LOCATION >= '{0}' and LINESQL.LOCATION <= '{1}'",V.Args.StartLoc.PSQLFriendly,V.Args.EndLoc.PSQLFriendly,V.Local.sFilter)
+F.Data.Linq.Join("LeftJoin","DataTable","dtLines*!*LINEOBJ","DataTable","dtLoc*!*LINESQL","LINEOBJ.INVOICENUMBER = LINESQL.INVOICE and LINEOBJ.SALESORDERLINENUMBER_NUM = LINESQL.ORDER_LINE_NUM and LINEOBJ.SALESORDERNUMBER_NUM = LINESQL.ORDER_NO_NUM and LINEOBJ.SHIPMENTSEQUENCE_NUM = LINESQL.ORDER_SUFFIX_NUM","LINEOBJ.INFORMATION-INVOICEDATE*!*LINEOBJ.OBSOLETE-COMPLEMENTINVOICEDATE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-QUANTITY-ORDERED*!*LINEOBJ.SHIPMENTLINE-QUANTITY-SHIPPED*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-COMPONENT-TYPE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-INFORMATION-TYPE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-DELIVERY-DUEDATE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-ACCOUNTING-ACCOUNT-ACCOUNTNUMBER*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-DELIVERY-USESSHIPSCHEDULE*!*LINEOBJ.INFORMATION-ISCREDITMEMO*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PART-PARTNUMBER*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PART-PARTNUMBERREVISION*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PART-INFORMATION-PRODUCTLINE-PRODUCTLINECODE*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PRICING-MONETARYVALUE-CUSTOMER-UNIT*!*LINEOBJ.SHIPMENTLINE-SALESORDERLINE-PRICING-MONETARYVALUE-CUSTOMER-EXTENDED*!*LINEOBJ.INVOICENUMBER*!*LINEOBJ.SALESORDERLINENUMBER*!*LINEOBJ.SALESORDERNUMBER*!*LINEOBJ.SHIPMENTSEQUENCE*!*LINESQL.LOCATION as Location",V.Local.sFilter,,"LINESQL.LOCATION desc","dtTempLoc",True)
+
+F.Data.DataTable.Merge("dtTempLoc","dtLinesLoc",True,2)
+F.Data.DataTable.Close("dtTempLoc")
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("Print_LocRange_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_5513_SA_OnTimeSh_Cust_Loc.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(SS_Form1_Unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Print_LocRange.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$SUPERVSR$}$05/04/2017 4:44:59 PM$}$False
+${$5$}$2.0.0.0$}$2
+${$6$}$lperrine$}$20221208105335738$}$2NUFt80QpM3hrjXY+iDnxks7M/ROcjnGWtx+efOAbQT2MaxvN21Spc/FT4mJGssPLyY6pW6I/HbHI7ZK/QqPxA==
+Program.Sub.Comments.End
+
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::
+SS_Form1.CTRL{{NAME::dtp1_BegDate\\TYPE::6\\CAPTION::Beginning Ship Date\\TABSTOP::1\\GROUP::2\\BROWSER::0\\INTL::63800\\SIZE::1
+SS_Form1.CTRL{{NAME::dtp1_EndDate\\TYPE::6\\CAPTION::Ending Ship Date\\TABSTOP::2\\GROUP::2\\BROWSER::0\\INTL::216300\\SIZE::1
+SS_Form1.CTRL{{NAME::chk_AllDates\\TYPE::9\\CAPTION::All Dates\\TABSTOP::3\\GROUP::-1\\SUBGROUP::1\\BROWSER::0\\INTL::19700\\SIZE::1
+SS_Form1.CTRL{{NAME::txt_BegCust\\TYPE::2\\CAPTION::Beginning Customer\\RANGE::lvw1_Cust\\TABSTOP::4\\GROUP::1\\BROWSER::1\\INTL::61000\\SIZE::1
+SS_Form1.CTRL{{NAME::txt_EndCust\\TYPE::2\\CAPTION::Ending Customer\\RANGE::lvw1_Cust\\TABSTOP::5\\GROUP::1\\BROWSER::1\\INTL::212900\\SIZE::1
+SS_Form1.CTRL{{NAME::chk_AllCustomer\\TYPE::9\\CAPTION::All Customers\\TABSTOP::6\\GROUP::-1\\SUBGROUP::1\\BROWSER::0\\INTL::19200\\SIZE::1
+SS_Form1.CTRL{{NAME::lvw1_Cust\\TYPE::7\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::chk_InclProg\\TYPE::9\\CAPTION::Include Progress Bill Lines\\TABSTOP::7\\GROUP::-1\\BROWSER::0\\INTL::291501\\SIZE::1
+SS_Form1.CTRL{{NAME::chk_ExclAccts\\TYPE::9\\CAPTION::Utilize Exclusion Accounts to Exclude Records\\TABSTOP::8\\GROUP::-1\\BROWSER::0\\INTL::3305\\SIZE::1
+SS_Form1.CTRL{{NAME::txt1_dBefore\\TYPE::2\\CAPTION::Days Before Due Date\\TABSTOP::9\\GROUP::3\\BROWSER::0\\INTL::746001\\SIZE::1
+SS_Form1.CTRL{{NAME::txt1_dAfter\\TYPE::2\\CAPTION::Days After Due Date\\TABSTOP::10\\GROUP::3\\BROWSER::0\\INTL::164502\\SIZE::1
+SS_Form1.CTRL{{NAME::cmd_Print\\TYPE::5\\CAPTION::Print\\TABSTOP::11\\GROUP::-1\\BROWSER::0\\INTL::452800\\SIZE::1
+
+Program.Sub.ScreenSS.End
